@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SecondViewController.h"
 
 @interface AppDelegate ()
 
@@ -40,6 +41,37 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    if ([url.absoluteString hasPrefix:@"TodayWidgetTest"]){//处理从今日通知中心过来的请求
+        
+        UIViewController *root  = self.window.rootViewController;
+        
+        if ([url.absoluteString hasSuffix:@"showAlert"]){
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告"
+                                                            message:@"TodayWidgetTest"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil, nil];
+            
+            [alert show];
+            
+            return YES;
+        }
+        else if ([url.absoluteString hasSuffix:@"modalSecondView"]){
+            
+            SecondViewController *vc = [root.storyboard instantiateViewControllerWithIdentifier:@"secondVC"];
+            
+            [root presentViewController:vc animated:YES completion:nil];
+            
+            return YES;
+        }
+    }
+    
+    return YES;
 }
 
 @end

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kK4-t0-42J">
+                                <rect key="frame" x="180" y="11" width="79" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="13Z-Wp-hXi"/>
+                                    <constraint firstAttribute="width" constant="79" id="q2i-vi-VcD"/>
+                                </constraints>
+                                <state key="normal" title="进入第二页">
+                                    <color key="titleColor" red="0.49539497128402199" green="0.88434314951242354" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="modalSecondView:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="XZA-5H-0oS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="112-rd-Q4C">
+                                <rect key="frame" x="61" y="11" width="79" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="5WP-bP-1WQ"/>
+                                    <constraint firstAttribute="width" constant="79" id="ozN-ne-yLP"/>
+                                </constraints>
+                                <state key="normal" title="弹出Alert">
+                                    <color key="titleColor" red="0.21524798710000001" green="0.78039215689999997" blue="0.31947373179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAlert:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="A8A-6C-WDX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="112-rd-Q4C" secondAttribute="bottom" constant="12" id="5pe-JX-LBd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kK4-t0-42J" secondAttribute="trailing" constant="45" id="A9q-pX-fHW"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="kK4-t0-42J" secondAttribute="bottom" constant="12" id="ERg-6b-eS8"/>
+                            <constraint firstItem="112-rd-Q4C" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="45" id="FfM-ag-oQI"/>
+                            <constraint firstItem="112-rd-Q4C" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="11" id="PGd-3R-6dW"/>
+                            <constraint firstItem="kK4-t0-42J" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="11" id="oqh-ke-bbQ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="60"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504" y="387"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
